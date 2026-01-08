@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import emotuneHome from "../assets/emotune/EmotuneHome.png";
+import emotuneHome from "../assets/Emotune/EmotuneHome.png";
 import useSwipeNavigation from "../hooks/useSwipeNavigation";
 
 function Divider() {
