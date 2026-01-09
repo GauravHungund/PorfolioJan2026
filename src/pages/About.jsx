@@ -10,20 +10,23 @@ export default function About() {
   const aboutText = `
 About Me
 
-I’m a full-stack developer who likes building things that actually work — and make sense.
+I’m a full-stack developer who enjoys building things carefully and learning along the way.
 
-I enjoy turning vague ideas into real systems, whether that’s a web app, an AI-powered tool, or a backend that doesn’t fall apart under pressure. I care about clean architecture, practical AI, and understanding how every piece of a system fits together — not just shipping code, but shipping thoughtfully.
+I like taking rough ideas and turning them into working systems — whether that’s a web app, a small backend service, or an AI-powered feature. I try to understand how different parts of a system fit together, and I care about writing code that’s simple, readable, and practical.
 
-Most of my learning has come from doing: hackathons, side projects, late-night debugging, and rewriting things until they feel right. I like problems with constraints, ambiguity, and real users on the other side.
+Most of what I’ve learned has come from building outside the classroom: side projects, hackathons, late-night debugging sessions, and going back to improve things that didn’t feel quite right the first time. I enjoy problems with some ambiguity, especially when there are real users involved and real trade-offs to think through.
 
-When I’m not coding, you’ll probably find me:
-• experimenting in the kitchen (baking included — precision matters there too)
-• watching or playing football
-• obsessing over how small details improve the overall experience
+Outside of coding, I enjoy:
 
-I build, I iterate, and I keep learning — whether it’s a new framework, a better system design, or a better recipe.
+experimenting in the kitchen (baking included — precision helps there too)
 
-If you’re here, you’ll see what I’m building — and how I think while building it.
+watching or playing football
+
+noticing small details that make products and experiences better
+
+I’m still learning, still building, and always trying to get a little better — whether that’s through a new tool, a cleaner design, or a better approach to a problem.
+
+If you’re here, you’ll see what I’m working on — and how I’m learning as I build.
 `.trim();
 
   const [nameIndex, setNameIndex] = useState(0);
