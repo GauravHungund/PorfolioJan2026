@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
+import Click_Sound from '/click_sound.mp3'
 
 const PROJECT_FILES = [
   "dungeon_forge.md",
@@ -15,6 +16,19 @@ export default function SystemMenu({onNavigate}) {
   const location = useLocation();
   const [projectsOpen, setProjectsOpen] = useState(false);
 
+   const clickSoundRef = useRef(null);
+
+  if (!clickSoundRef.current) {
+    clickSoundRef.current = new Audio(Click_Sound);
+    clickSoundRef.current.volume = 0.4;
+  }
+
+  const playClick = () => {
+    const sound = clickSoundRef.current;
+    sound.currentTime = 0;
+    sound.play().catch(() => {});
+  };
+
   const isActive = (path) =>
     location.pathname === path ||
     location.pathname.startsWith(path + "/");
@@ -27,6 +41,7 @@ export default function SystemMenu({onNavigate}) {
 
   const inactiveClass =
     "text-emerald-400 hover:text-emerald-200 hover:bg-emerald-400/5";
+    
 
   return (
     <div className="w-full md:w-[240px] h-auto md:h-full bg-black/40 border border-emerald-400 font-mono p-6 backdrop-blur-md">
@@ -37,7 +52,8 @@ export default function SystemMenu({onNavigate}) {
       <ul className="space-y-2 text-sm leading-relaxed">
         {/* ABOUT */}
         <li
-          onClick={() => {navigate("/about");
+          onClick={() => {playClick(),
+            navigate("/about"),
             onNavigate?.()
           }}
           className={`${itemBase} ${
@@ -50,6 +66,7 @@ export default function SystemMenu({onNavigate}) {
         {/* PROJECTS FOLDER */}
         <li
           onClick={() => {
+            playClick();
             setProjectsOpen((v) => !v);
           }}
           className={`${itemBase} ${inactiveClass} flex items-center gap-1`}
@@ -74,7 +91,8 @@ export default function SystemMenu({onNavigate}) {
               return (
                 <li
                   key={file}
-                  onClick={() => {navigate(path);
+                  onClick={() => {playClick(),
+                    navigate(path);
                     onNavigate?.()
                   }}
                   className={`
@@ -97,7 +115,8 @@ export default function SystemMenu({onNavigate}) {
 
         {/* SKILLS */}
         <li
-          onClick={() => {navigate("/skills"),
+          onClick={() => {playClick(),
+            navigate("/skills"),
             onNavigate?.()
           }}
           className={`${itemBase} ${
@@ -109,7 +128,8 @@ export default function SystemMenu({onNavigate}) {
 
         {/* RESUME */}
         <li
-          onClick={() => {navigate("/Education-Experience");
+          onClick={() => {playClick(),
+            navigate("/Education-Experience");
             onNavigate?.()
           }}
           className={`${itemBase} ${
@@ -121,7 +141,8 @@ export default function SystemMenu({onNavigate}) {
 
         {/* CONTACT */}
         <li
-          onClick={() => {navigate("/contact");
+          onClick={() => {playClick(),
+            navigate("/contact");
             onNavigate?.()}}
           className={`${itemBase} ${
             isActive("/contact") ? activeClass : inactiveClass

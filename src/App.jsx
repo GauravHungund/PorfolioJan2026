@@ -16,6 +16,7 @@ import MicDrop from "./components/MicDrop";
 import EmoTune from "./pages/Emotune";
 import TaskChain from "./pages/TaskChain";
 import EducationExperience from "./pages/ExperienceEducation";
+import CursorFollower from "./components/CursorFollower";
 
 export default function App() {
   const location = useLocation();
@@ -33,10 +34,10 @@ export default function App() {
   return (
     <div className="relative w-screen h-screen bg-black overflow-hidden">
       {/* Matrix background */}
+      <CursorFollower/>
       <div className="absolute inset-0 z-0 pointer-events-none">
         <MatrixRain />
       </div>
-
       {/* App shell */}
       <div className="relative z-10 w-screen h-screen flex items-center justify-center">
         <div className="flex flex-col md:flex-row gap-4 md:gap-8 w-[92vw] md:w-[85vw] h-[90vh] md:h-[85vh] border p-2">

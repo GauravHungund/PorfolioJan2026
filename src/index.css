@@ -52,3 +52,10 @@ html {
   background: #10b981;
   border-radius: 4px;
 }
+
+
+@media (pointer: fine) {
+  * {
+    cursor: default !important;
+  }
+}
